@@ -1,8 +1,8 @@
 import React from 'react';
 import './Login.scss';
 
-function Login() {
+function LoginDahye() {
   return <h1>Lee Dahye Login-Page</h1>;
 }
 
-export default Login;
+export default LoginDahye;

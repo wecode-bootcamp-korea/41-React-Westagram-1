@@ -1,7 +1,7 @@
-import React from 'React';
+import React from 'react';
 import './Login.scss';
 
-function Login() {
+function LoginHwanseong() {
   return <h2>Login</h2>;
 }
-export default Login;
+export default LoginHwanseong;

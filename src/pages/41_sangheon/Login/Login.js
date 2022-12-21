@@ -1,8 +1,8 @@
 import React from 'react';
 import './Login.scss';
 
-function Login() {
+function LoginSangheon() {
   return <h1>Login</h1>;
 }
 
-export default Login;
+export default LoginSangheon;
