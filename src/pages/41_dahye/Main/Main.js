@@ -1,9 +1,10 @@
+import React from 'react';
 import "./Main.scss";
 
 const Main () => {
   return (
     <>
-      <h1>Lee Dahye Maing-Page</h1>
+      <h1>Lee Dahye Main-Page</h1>
     </>
   );
 }
