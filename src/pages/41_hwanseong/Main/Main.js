@@ -1,7 +1,8 @@
-import React from 'React'
+import React from 'react';
 import './Main.scss';
-function Main() {
-  return <h2>Main</h2>
+
+function MainHwanseong() {
+  return <h2>Main</h2>;
 }
 
-export default 'main'
+export default MainHwanseong;

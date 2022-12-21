@@ -1,8 +1,8 @@
 import React from 'react';
 import './Main.scss';
 
-function Main() {
+function MainSangheon() {
   return <h1>Main</h1>;
 }
 
-export default Main;
+export default MainSangheon;

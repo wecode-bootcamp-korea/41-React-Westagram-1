@@ -1,12 +1,8 @@
 import React from 'react';
-import "./Main.scss";
+import './Main.scss';
 
-const Main () => {
-  return (
-    <>
-      <h1>Lee Dahye Main-Page</h1>
-    </>
-  );
+function MainDahye() {
+  return <h1>Lee Dahye Main-Page</h1>;
 }
 
-export default Main;
+export default MainDahye;
