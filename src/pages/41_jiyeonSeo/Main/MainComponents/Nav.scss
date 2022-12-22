@@ -1,0 +1,66 @@
+@import '../../styles/common.scss';
+@import '../../styles/variables.scss';
+
+nav {
+  @include flexSort(null, space-around, center);
+  @include widthHeightSort(100%, 10%);
+  border-bottom: $border-gray;
+
+  .nav-left {
+    @include flexSort(null, null, center);
+
+    #toMainPage {
+      padding: 5px 10px;
+      margin-left: 20px;
+      border-left: 2px solid black;
+      text-decoration: none;
+      font-family: 'Lobster', cursive;
+      color: black;
+    }
+  }
+
+  .nav-center {
+    position: relative;
+
+    input {
+      @include borderSort($border-gray, $border-radius);
+      height: 24px;
+      padding-left: 30px;
+      background-image: url('../../../../assets/images/41_jiyeon/magnify.png');
+      background-size: 13px;
+      background-repeat: no-repeat;
+      background-position: 10px center;
+      text-align: center;
+      outline: none;
+
+      &::placeholder {
+        position: relative;
+        right: 15px;
+      }
+    }
+
+    .z-index-input {
+      position: absolute;
+      top: 45px;
+      left: 40px;
+      z-index: 3;
+    }
+  }
+
+  .nav-right {
+    position: relative;
+    display: flex;
+    gap: 15px;
+
+    .z-index-profile {
+      position: absolute;
+      top: 45px;
+      left: 45px;
+      z-index: 3;
+    }
+  }
+
+  .icons {
+    width: 24px;
+  }
+}

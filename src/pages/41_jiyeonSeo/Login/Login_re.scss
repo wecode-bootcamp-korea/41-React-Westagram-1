@@ -1,3 +1,61 @@
-h1 {
-  background-color: red;
+@import '../styles/common.scss';
+@import '../styles/variables.scss';
+
+.wrapLogin {
+  @include flexSort(null, center, center);
+  @include widthHeightSort(100vw, 100vh);
+
+  .content {
+    @include flexSort(column, null, center);
+    @include widthHeightSort(400px, 550px);
+    @include borderSort($border-gray, $border-radius);
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+
+    h1 {
+      all: unset;
+      margin: 30px 0;
+      font-family: 'Lobster', cursive;
+      font-size: 50px;
+    }
+
+    .inputs {
+      @include flexSort(column, null, null);
+      @include widthHeightSort(330px, 150px);
+      gap: 15px;
+      margin: 15px 0;
+
+      input {
+        @include borderSort($border-input, $border-radius);
+        all: unset;
+        height: 55px;
+        padding: 8px 15px;
+        background-color: #fafafa;
+
+        &::placeholder {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .loginBtn {
+      @include widthHeightSort(330px, 55px);
+      @include borderSort(none, $border-radius);
+      background-color: $color-light-blue;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 10px;
+    }
+
+    p {
+      @include positionSort(null, null, 30px, null);
+      text-decoration: none;
+      font-size: 24px;
+      color: $color-blue;
+    }
+  }
 }

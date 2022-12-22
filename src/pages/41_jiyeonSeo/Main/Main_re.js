@@ -1,8 +1,21 @@
 import React from 'react';
 import './Main_re.scss';
+import '../styles/common.scss';
+import '../styles/variables.scss';
+import Nav from './MainComponents/Nav';
+import Content from './MainComponents/Content';
+import MainRight from './MainComponents/MainRight';
 
-function MainJiyeon() {
-  return <h1>안녕히계세오 지연이였어요</h1>;
+function Main() {
+  return (
+    <div className="wrapMain">
+      <Nav />
+      <main>
+        <Content />
+        <MainRight />
+      </main>
+    </div>
+  );
 }
 
-export default MainJiyeon;
+export default Main;

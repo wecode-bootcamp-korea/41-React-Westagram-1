@@ -29,8 +29,8 @@ function Router() {
         <Route path="/login_hwanseong" element={<LoginHwanseong />} />
         <Route path="/login_sangheon" element={<LoginSangheon />} />
         <Route path="/login_jiyeon" element={<Hi />} />
-        <Route path="/login_jiyeonSeo" element={LoginJiyeon} />
-        <Route path="/main_jiyeonSeo" element={MainJiyeon} />
+        <Route path="/login_jiyeonSeo" element={<LoginJiyeon />} />
+        <Route path="/main_jiyeonSeo" element={<MainJiyeon />} />
       </Routes>
     </BrowserRouter>
   );
