@@ -3,6 +3,17 @@ import './Login_re.scss';
 import { Link } from 'react-router-dom';
 
 function LoginJiyeon() {
+  const [idValue, setIdValue] = useState('');
+  const [pwValue, setPwValue] = useState('');
+
+  const saveUserId = event => {
+    setIdValue(event.target.value);
+  };
+
+  const saveUserPw = event => {
+    setPwValue(event.target.value);
+  };
+
   return (
     <div className="wrapLogin">
       <div className="content">
@@ -12,8 +23,14 @@ function LoginJiyeon() {
             id="idInput"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            onChange={saveUserId}
           />
-          <input id="pwInput" type="password" placeholder="비밀번호" />
+          <input
+            id="pwInput"
+            type="password"
+            placeholder="비밀번호"
+            onChange={saveUserPw}
+          />
         </div>
         <Link to="/main_jiyeonSeo" className="loginBtn">
           로그인
