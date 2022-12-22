@@ -1,17 +1,30 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login_re.scss';
-import { Link } from 'react-router-dom';
 
 function LoginJiyeon() {
-  const [idValue, setIdValue] = useState('');
-  const [pwValue, setPwValue] = useState('');
+  let [idValue, setIdValue] = useState('');
+  let [pwValue, setPwValue] = useState('');
+  const active = idValue.includes('@') && pwValue.length > 4;
+  let isBlocked;
+  active ? (isBlocked = false) : (isBlocked = true);
+  let color;
+  isBlocked
+    ? (color = { backgroundColor: '#c5e1fb' })
+    : (color = { backgroundColor: '#2099f1' });
 
-  const saveUserId = event => {
+  const savedUserId = event => {
     setIdValue(event.target.value);
   };
 
-  const saveUserPw = event => {
+  const savedUserPw = event => {
     setPwValue(event.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const handleClickEvent = () => {
+    navigate('/main_jiyeonSeo');
   };
 
   return (
@@ -22,19 +35,26 @@ function LoginJiyeon() {
           <input
             id="idInput"
             type="text"
+            value={idValue}
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={saveUserId}
+            onChange={savedUserId}
           />
           <input
             id="pwInput"
             type="password"
+            value={pwValue}
             placeholder="비밀번호"
-            onChange={saveUserPw}
+            onChange={savedUserPw}
           />
         </div>
-        <Link to="/main_jiyeonSeo" className="loginBtn">
+        <button
+          className="loginBtn"
+          disabled={isBlocked}
+          style={color}
+          onClick={handleClickEvent}
+        >
           로그인
-        </Link>
+        </button>
         <p>비밀번호를 잊으셨나요?</p>
       </div>
     </div>
