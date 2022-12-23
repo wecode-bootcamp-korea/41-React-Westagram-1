@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function LoginDagyeong() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [idValue, setId] = useState('');
   const [pwValue, setPw] = useState('');
-  // const [disabled, setDisabled] = useState(false);
-  // const [color, setColor] = useState("#596d99");
+  // const [disabled, setDisabled] = React.useState(true);
 
   const saveUserId = event => {
     setId(event.target.value);
@@ -20,11 +19,14 @@ function LoginDagyeong() {
     // console.log(event.target.value);
   };
 
-  // const isDisabled = (idValue) => {
-  //   idValue.includes("@") && pwValue.length >= 5
-  //     ? setDisabled(false)
-  //     : setDisabled(true);
-  // };
+  const active = idValue.includes('@') && pwValue.length >= 5;
+  let blocked;
+  active ? (blocked = false) : (blocked = true);
+
+  let color;
+  active
+    ? (color = { backgroundColor: 'blue' })
+    : (color = { backgroundColor: '#56a5f2' });
 
   return (
     <div className="login_wraaper">
@@ -48,9 +50,11 @@ function LoginDagyeong() {
           <div>
             <button
               className="login_btn"
-              onClick={() => {
-                navigate('/main');
-              }}
+              // onClick={() => {
+              //   navigate('/main');
+              // }}
+              style={color}
+              disabled={blocked}
             >
               로그인
             </button>
