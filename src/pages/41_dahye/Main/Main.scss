@@ -1,3 +1,295 @@
-h1 {
-  background-color: blue;
+@import '../../../styles/variable.scss';
+
+.Main {
+  @include flex-column(column);
+
+  /* =========== header 부분 ============ */
+
+  .header {
+    @include flex(space-evenly, center);
+    height: 8vh;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.365);
+
+    .header-first {
+      display: flex;
+
+      .header-logo {
+        width: 38px;
+        height: 100%;
+        padding-right: 10px;
+        border-right: 3px solid black;
+      }
+
+      .header-title {
+        font-family: 'Lobster';
+        font-size: 25px;
+        padding-left: 10px;
+        margin: 0;
+      }
+    }
+
+    .header-second {
+      display: flex;
+
+      .header-search {
+        width: 220px;
+        height: 25px;
+      }
+
+      .header-search::placeholder {
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+
+    .header-third {
+      display: flex;
+
+      .header-compass,
+      .header-heart,
+      .header-mypage {
+        padding: 10px;
+      }
+
+      .header-compass {
+        width: 43px;
+        height: 100%;
+      }
+
+      .header-heart {
+        width: 44px;
+        height: 100%;
+      }
+
+      .header-mypage {
+        width: 41px;
+        height: 100%;
+      }
+    }
+  }
+
+  /* ========== main 부분 ============ */
+
+  .main {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.087);
+
+    .feeds {
+      display: flex;
+      width: 38vw;
+      margin-right: 30px;
+
+      .article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* height: 80%; */
+        background-color: white;
+        border: 1px solid rgba(128, 128, 128, 0.365);
+        margin-top: 30px;
+
+        .article-account {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 40px;
+          /* border: 1px solid rgba(128, 128, 128, 0.365); */
+          margin-top: 10px;
+          margin-left: 20px;
+
+          .article-account-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 70%;
+          }
+
+          .article-account-text {
+            display: flex;
+            flex-direction: column;
+            margin-left: 15px;
+
+            .article-account-text-1 {
+              font-size: 11px;
+              font-weight: 800;
+              margin: 0;
+            }
+
+            .article-account-text-2 {
+              font-size: 11px;
+              color: gray;
+              margin: 0;
+              margin-top: 7px;
+            }
+          }
+        }
+
+        .article-img {
+          display: flex;
+          margin-top: 10px;
+          margin-left: 20px;
+
+          .article-image {
+            width: 500px;
+            height: 500px;
+          }
+        }
+
+        .article-function-img {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+          margin-left: 25px;
+          margin-right: 30px;
+
+          .article-function-margin img {
+            margin-right: 5px;
+          }
+          .article-function-margin img,
+          .article-function-right img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .article-posting {
+          display: flex;
+          align-items: center;
+          margin-left: 25px;
+          margin-top: 10px;
+
+          .article-profile {
+            width: 20px;
+            height: 20px;
+            border-radius: 70%;
+            margin-right: 10px;
+          }
+          .name {
+            font-weight: 700;
+          }
+        }
+
+        .article-content {
+          margin: 20px 25px 0px 25px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.302);
+
+          .name {
+            font-weight: 700;
+          }
+        }
+
+        .comment-lists {
+          margin: 15px 25px 5px 25px;
+          padding: 0;
+
+          .name {
+            font-weight: 700;
+          }
+        }
+
+        .article-comment-input {
+          display: flex;
+          justify-content: space-between;
+          margin: 5px 25px 5px 25px;
+          padding: 0;
+
+          .article-comment-input {
+            margin-left: 0;
+          }
+
+          .comment-input {
+            border: 0;
+          }
+        }
+      }
+    }
+
+    /* ========== main-right 부분 ============ */
+
+    .main-right {
+      display: flex;
+      flex-direction: column;
+      width: 26vw;
+      height: 100vh;
+
+      .account {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        margin-top: 30px;
+
+        .account-img {
+          width: 50px;
+          height: 50px;
+          border-radius: 70%;
+        }
+
+        .account-text {
+          display: flex;
+          flex-direction: column;
+          margin-left: 15px;
+
+          .account-text-1 {
+            font-size: 13px;
+            font-weight: 800;
+            margin: 0;
+          }
+
+          .account-text-2 {
+            font-size: 13px;
+            color: gray;
+            margin: 0;
+            margin-top: 7px;
+          }
+        }
+      }
+
+      .story-box {
+        margin: 25px 0px 0px 0px;
+        padding: 0px 10px 0px 10px;
+        border: 1px solid gray;
+      }
+
+      .story-title {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .story-account-1 {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+
+        .story-account-img {
+          width: 25px;
+          height: 25px;
+          border-radius: 70%;
+        }
+
+        .story-account-text {
+          display: flex;
+          flex-direction: column;
+          margin-left: 15px;
+        }
+
+        .story-account-text-1 {
+          font-size: 13px;
+          font-weight: 800;
+          margin: 0;
+        }
+
+        .story-account-text-2 {
+          font-size: 13px;
+          color: gray;
+          margin: 0;
+          margin-top: 7px;
+        }
+      }
+    }
+  }
 }

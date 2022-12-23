@@ -1,8 +1,15 @@
 import React from 'react';
+import Nav from './Nav.js';
+import Feed from './Feed.js';
 import './Main.scss';
 
-function MainDahye() {
-  return <h1>Lee Dahye Main-Page</h1>;
+function Main() {
+  return (
+    <div className="Main">
+      <Nav />
+      <Feed />
+    </div>
+  );
 }
 
-export default MainDahye;
+export default Main;
