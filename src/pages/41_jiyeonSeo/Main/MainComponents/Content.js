@@ -1,6 +1,24 @@
+import React, { useState } from 'react';
 import './Content.scss';
 
 function Content() {
+  const [input, setInput] = useState('');
+  const [comments, setComments] = useState([]);
+  let readyToClick = input !== '' ? true : false;
+
+  const onChange = event => {
+    setInput(event.target.value);
+  };
+
+  const onSubmit = event => {
+    event.preventDefault();
+    if (input === '') {
+      return;
+    }
+    setComments(prev => [input, ...prev]);
+    setInput('');
+  };
+
   return (
     <div className="content">
       <div className="feed">
@@ -61,16 +79,35 @@ function Content() {
               <span className="gray">42분 전</span>
               <span className="delete gray">삭제</span>
             </li>
+            {comments.map(comment => (
+              <li key={comment.index}>
+                <span className="bold">mia_seo</span>
+                <span>{comment}</span>
+                <img
+                  className="heart"
+                  src="./images/41_jiyeon/heart.png"
+                  alt="하트"
+                />
+                <span className="gray">42분 전</span>
+                <span className="delete gray">삭제</span>
+              </li>
+            ))}
           </ul>
         </div>
-        <form id="comment">
+        <form id="comment" onSubmit={onSubmit}>
           <input
+            onChange={onChange}
             id="commentInput"
             type="text"
             placeholder="댓글달기"
             required
+            value={input}
           />
-          <button id="commentBtn">게시</button>
+          <button
+            style={readyToClick ? { color: '#2099f1' } : { color: '#c5e1fb' }}
+          >
+            게시
+          </button>
         </form>
       </div>
     </div>

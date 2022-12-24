@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './Login_re.scss';
 
 function LoginJiyeon() {
-  let [idValue, setIdValue] = useState('');
-  let [pwValue, setPwValue] = useState('');
+  const [idValue, setIdValue] = useState('');
+  const [pwValue, setPwValue] = useState('');
   const active = idValue.includes('@') && pwValue.length > 4;
   let isBlocked;
   active ? (isBlocked = false) : (isBlocked = true);

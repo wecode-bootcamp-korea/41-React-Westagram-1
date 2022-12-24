@@ -59,8 +59,8 @@
   }
 
   .comments {
-    height: 100px;
-    overflow: hidden;
+    height: 150px;
+    overflow: scroll;
 
     p {
       margin-top: 0;
@@ -84,7 +84,6 @@
       @include positionSort(null, 5px, 60px, null);
       border: none;
       background-color: white;
-      color: $color-light-blue;
     }
   }
 
@@ -93,6 +92,10 @@
     padding: 0;
     margin: 0;
     list-style: none;
+
+    span {
+      margin-right: 5px;
+    }
 
     & li img {
       @include positionSort(null, 40px, null, null);

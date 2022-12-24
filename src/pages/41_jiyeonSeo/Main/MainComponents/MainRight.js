@@ -52,7 +52,7 @@ function MainRight() {
           <div className="row">
             <img
               className="profile-photo active"
-              src="./image/41_jiyeons/4.png"
+              src="./images/41_jiyeon/4.png"
               alt="프로필 사진"
             />
             <div className="column">
