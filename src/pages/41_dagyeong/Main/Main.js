@@ -1,7 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
 
 function MainDagyeong() {
+  const [commentValue, setComment] = useState(''); //사용자가 입력하고 있는 댓글
+  const [comments, setCommentList] = useState([]); // 댓글 리스트
+  // const [isValid, setIsValid] = useState(false); // 댓글 게시 가능 여부
+
+  const commentInput = event => {
+    setComment(event.target.value);
+    // console.log(event.target.value);
+    // console.log(Array.isArray(event.target.value));
+  };
+
+  const feedComments = [...comments];
+  const nickName = 'maratang42';
+  // console.log(feedComments);
+  let onEnter = event => {
+    if (event.key === 'Enter') {
+      // console.log(event.key);
+      // console.log(feedComments);
+      feedComments.push(commentValue);
+      setCommentList(feedComments);
+      setComment('');
+    }
+  };
+
   return (
     <>
       <nav className="navbar">
@@ -60,20 +83,35 @@ function MainDagyeong() {
               <img src="./images/41_dagyeong/bookmark.png" alt="bookmark" />
             </div>
             <p className="like">좋아요 3270개</p>
-            <ul id="commentLists">
-              <li className="comment">
-                <span>nana123</span>
-                <span>위워크에서 진행한 필름카메라 클래스...</span>
-                {/* <!-- <img src="./images/heart.png" class="comment_icon" /> --> */}
-                <span className="delete">x</span>
-              </li>
-              <li className="comment">
-                <span>spam789</span>
-                <span>나도 필름카메라 가지고 싶다!!</span>
-                <span className="delete">x</span>
-                {/* <!-- <img src="./images/heart.png" class="comment_icon" /> --> */}
-              </li>
-            </ul>
+            <div className="commentLists">
+              <ul className="comment_ul">
+                <li className="comment_box">
+                  <span className="nickName">nana123</span>
+                  <span className="comment">
+                    위워크에서 진행한 필름카메라 클래스...
+                  </span>
+                  {/* <!-- <img src="./images/heart.png" class="comment_icon" /> --> */}
+                  <span className="delete">x</span>
+                </li>
+              </ul>
+              <ul className="comment_ul">
+                <li className="comment_box">
+                  <span className="nickName">spam789</span>
+                  <span className="comment">나도 필름카메라 가지고 싶다!!</span>
+                  <span className="delete">x</span>
+                  {/* <!-- <img src="./images/heart.png" class="comment_icon" /> --> */}
+                </li>
+              </ul>
+              <ul className="comment_ul">
+                <li className="comment_box">
+                  <span className="nickName">{nickName}</span>
+                  {feedComments.map(comments => (
+                    // <span className='nickName'>{nickName}</span>
+                    <span className="comment">{comments}</span>
+                  ))}
+                </li>
+              </ul>
+            </div>
             <p className="like">35분전</p>
             <hr />
             {/* <!-- 댓글 --> */}
@@ -82,6 +120,14 @@ function MainDagyeong() {
                 type="text"
                 placeholder="댓글달기..."
                 className="comment_input"
+                value={commentValue}
+                onChange={commentInput}
+                // onKeyUp={event => {
+                //   event.target.value.length > 0
+                //     ? setIsValid(true)
+                //     : setIsValid(false);
+                // }}
+                onKeyDown={onEnter}
               />
               <button className="comment_btn" id="post">
                 게시

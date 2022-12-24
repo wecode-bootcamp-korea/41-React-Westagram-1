@@ -1,6 +1,10 @@
 @import '/src/pages/41_dagyeong/styles/mixin.scss';
 @import '/src/pages/41_dagyeong/styles/variables.scss';
 
+body {
+  // width: 100%;
+  height: 100%;
+}
 /* nav bar */
 .icon {
   width: 24px;
@@ -46,12 +50,15 @@ main {
 
   .feeds {
     display: flex;
+    // width: 470px;
 
     article {
       width: 470px;
-      height: 750px;
+      // height: 750px;
       border: 1px solid #e6e6e6;
       border-radius: 5px;
+      // height: 770px;
+      // height: 770px;
     }
 
     .feedTop {
@@ -97,54 +104,61 @@ main {
   }
 
   .like {
-    margin-left: 5px;
+    margin-left: 10px;
+    font-size: 14px;
   }
 
-  #commentLists {
-    list-style: none;
-    padding: 0;
+  .commentLists {
+    // overflow: hidden;
+    // max-height: 100%;
+    // padding: 0;
 
-    .comment {
-      display: flex;
-      justify-content: space-between;
-      margin: 5px 5px;
+    .comment_ul {
+      list-style: none;
+      padding: 0;
+      // margin-left: 10px;
+      margin: 10px 10px;
 
-      .comment span:nth-child(1) {
+      .nickName {
         font-weight: bold;
-        margin-left: 5px;
       }
 
-      .comment span:nth-child(2) {
-        margin-left: -5px;
+      .comment {
+        margin-left: 10px;
       }
 
       .delete {
-        margin-left: -5px;
+        margin-left: 10px;
       }
     }
   }
-  hr {
-    background: #e6e6e6;
-    height: 1px;
-    border: 0;
-  }
+}
+.comment_box {
+  display: flex;
+  margin-top: 0;
+  // flex-direction: column;
+}
+hr {
+  background: #e6e6e6;
+  height: 1px;
+  border: 0;
+}
 
-  .do_comment > input {
-    width: 420px;
-    height: 30px;
-    border: none;
-    text-indent: 10px;
-  }
+.do_comment > input {
+  width: 420px;
+  height: 30px;
+  border: none;
+  text-indent: 10px;
+  margin-bottom: 5px;
+}
 
-  .do_comment > button {
-    border: none;
-    background-color: transparent;
-    color: #c5e2fb;
-  }
+.do_comment > button {
+  border: none;
+  background-color: transparent;
+  color: #c5e2fb;
 }
 
 /* main_right */
-
 .main_right {
   margin-left: 15px;
 

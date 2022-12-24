@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function LoginDagyeong() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [idValue, setId] = useState('');
   const [pwValue, setPw] = useState('');
@@ -50,9 +50,9 @@ function LoginDagyeong() {
           <div>
             <button
               className="login_btn"
-              // onClick={() => {
-              //   navigate('/main');
-              // }}
+              onClick={() => {
+                navigate('/main_dagyeong');
+              }}
               style={color}
               disabled={blocked}
             >
