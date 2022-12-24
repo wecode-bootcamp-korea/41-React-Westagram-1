@@ -4,6 +4,7 @@ import './Content.scss';
 function Content() {
   const [input, setInput] = useState('');
   const [comments, setComments] = useState([]);
+  const [like, setLike] = useState(false);
   let readyToClick = input !== '' ? true : false;
 
   const onChange = event => {
@@ -17,6 +18,17 @@ function Content() {
     }
     setComments(prev => [input, ...prev]);
     setInput('');
+  };
+
+  const handleHeartClick = event => {
+    setLike(prev => !prev);
+    like
+      ? (event.target.src = './images/41_jiyeon/heart-fill.png')
+      : (event.target.src = './images/41_jiyeon/heart.png');
+  };
+
+  const handleDeleteClick = event => {
+    event.target.parentElement.remove();
   };
 
   return (
@@ -73,23 +85,29 @@ function Content() {
               <span>여기서 이러시면 안됩니다!!</span>
               <img
                 className="heart"
+                onClick={handleHeartClick}
                 src="./images/41_jiyeon/heart.png"
                 alt="하트"
               />
               <span className="gray">42분 전</span>
-              <span className="delete gray">삭제</span>
+              <span className="delete gray" onClick={handleDeleteClick}>
+                삭제
+              </span>
             </li>
             {comments.map(comment => (
               <li key={comment.index}>
                 <span className="bold">mia_seo</span>
                 <span>{comment}</span>
                 <img
+                  onClick={handleHeartClick}
                   className="heart"
                   src="./images/41_jiyeon/heart.png"
                   alt="하트"
                 />
                 <span className="gray">42분 전</span>
-                <span className="delete gray">삭제</span>
+                <span className="delete gray" onClick={handleDeleteClick}>
+                  삭제
+                </span>
               </li>
             ))}
           </ul>
