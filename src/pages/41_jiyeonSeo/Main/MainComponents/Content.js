@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Content.scss';
 
-function Comment({ comments }) {
+function Comment({ comment, index }) {
   const [like, setLike] = useState(false);
 
   const handleHeartClick = event => {
@@ -16,24 +16,20 @@ function Comment({ comments }) {
   };
 
   return (
-    <>
-      {comments.map(comment => (
-        <li key={comment.index}>
-          <span className="bold">mia_seo</span>
-          <span>{comment}</span>
-          <img
-            onClick={handleHeartClick}
-            className="heart"
-            src="./images/41_jiyeon/heart.png"
-            alt="하트"
-          />
-          <span className="gray">42분 전</span>
-          <span className="delete gray" onClick={handleDeleteClick}>
-            삭제
-          </span>
-        </li>
-      ))}
-    </>
+    <li key={index}>
+      <span className="bold">mia_seo</span>
+      <span>{comment}</span>
+      <img
+        onClick={handleHeartClick}
+        className="heart"
+        src="./images/41_jiyeon/heart.png"
+        alt="하트"
+      />
+      <span className="gray">42분 전</span>
+      <span className="delete gray" onClick={handleDeleteClick}>
+        삭제
+      </span>
+    </li>
   );
 }
 
@@ -130,7 +126,9 @@ function Content() {
                 삭제
               </span>
             </li>
-            <Comment comments={comments} />
+            {comments.map((comment, index) => (
+              <Comment comment={comment} key={index} />
+            ))}
           </ul>
         </div>
         <form id="comment" onSubmit={onSubmit}>
