@@ -48,7 +48,7 @@ function Content() {
     if (input === '') {
       return;
     }
-    setComments(prev => [input, ...prev]);
+    setComments(prev => [...prev, input]);
     setInput('');
   };
 
