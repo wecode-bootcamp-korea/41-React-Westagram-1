@@ -1,10 +1,48 @@
 import React, { useState } from 'react';
 import './Content.scss';
 
+function Comment({ comments }) {
+  const [like, setLike] = useState(false);
+
+  const handleHeartClick = event => {
+    setLike(prev => !prev);
+    like
+      ? (event.target.src = './images/41_jiyeon/heart-fill.png')
+      : (event.target.src = './images/41_jiyeon/heart.png');
+  };
+
+  const handleDeleteClick = event => {
+    event.target.parentElement.remove();
+  };
+
+  return (
+    <>
+      {comments.map(comment => (
+        <li key={comment.index}>
+          <span className="bold">mia_seo</span>
+          <span>{comment}</span>
+          <img
+            onClick={handleHeartClick}
+            className="heart"
+            src="./images/41_jiyeon/heart.png"
+            alt="하트"
+          />
+          <span className="gray">42분 전</span>
+          <span className="delete gray" onClick={handleDeleteClick}>
+            삭제
+          </span>
+        </li>
+      ))}
+    </>
+  );
+}
+
 function Content() {
   const [input, setInput] = useState('');
   const [comments, setComments] = useState([]);
   const [like, setLike] = useState(false);
+  const [count, setCount] = useState(0);
+
   let readyToClick = input !== '' ? true : false;
 
   const onChange = event => {
@@ -18,6 +56,7 @@ function Content() {
     }
     setComments(prev => [input, ...prev]);
     setInput('');
+    setCount(prev => prev++);
   };
 
   const handleHeartClick = event => {
@@ -94,22 +133,7 @@ function Content() {
                 삭제
               </span>
             </li>
-            {comments.map(comment => (
-              <li key={comment.index}>
-                <span className="bold">mia_seo</span>
-                <span>{comment}</span>
-                <img
-                  onClick={handleHeartClick}
-                  className="heart"
-                  src="./images/41_jiyeon/heart.png"
-                  alt="하트"
-                />
-                <span className="gray">42분 전</span>
-                <span className="delete gray" onClick={handleDeleteClick}>
-                  삭제
-                </span>
-              </li>
-            ))}
+            <Comment comments={comments} />
           </ul>
         </div>
         <form id="comment" onSubmit={onSubmit}>
