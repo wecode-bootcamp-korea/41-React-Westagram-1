@@ -41,8 +41,6 @@ function Content() {
   const [input, setInput] = useState('');
   const [comments, setComments] = useState([]);
   const [like, setLike] = useState(false);
-  const [count, setCount] = useState(0);
-
   let readyToClick = input !== '' ? true : false;
 
   const onChange = event => {
@@ -56,7 +54,6 @@ function Content() {
     }
     setComments(prev => [input, ...prev]);
     setInput('');
-    setCount(prev => prev++);
   };
 
   const handleHeartClick = event => {
