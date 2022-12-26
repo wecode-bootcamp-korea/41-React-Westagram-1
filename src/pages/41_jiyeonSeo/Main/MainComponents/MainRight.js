@@ -1,4 +1,4 @@
-import { STORIES_PROFILE, ASIDE_INFO } from './data';
+import { STORIES_PROFILE, RECOMMEND_PROFILE, ASIDE_INFO } from './data';
 import './MainRight.scss';
 
 function Stories({ id, src, name }) {
@@ -9,6 +9,19 @@ function Stories({ id, src, name }) {
         <p className="bold marginZero">{name}</p>
         <p className="gray marginZero">15분 전</p>
       </div>
+    </div>
+  );
+}
+
+function Recommend({ src, name, follow }) {
+  return (
+    <div className="row">
+      <img className="profile-photo active" src={src} alt="프로필 사진" />
+      <div className="column">
+        <p className="bold marginZero">{name}</p>
+        <p className="gray marginZero hidden">{follow}</p>
+      </div>
+      <p className="blue">팔로우</p>
     </div>
   );
 }
@@ -41,48 +54,14 @@ function MainRight() {
           <p className="bold marginZero">모두 보기</p>
         </div>
         <div className="column gap scroll">
-          <div className="row">
-            <img
-              className="profile-photo active"
-              src="./images/41_jiyeon/5.png"
-              alt="프로필 사진"
+          {RECOMMEND_PROFILE.map(recommend => (
+            <Recommend
+              key={recommend.id}
+              src={recommend.src}
+              name={recommend.name}
+              follow={recommend.follow}
             />
-            <div className="column">
-              <p className="bold marginZero">eeeeeasy</p>
-              <p className="gray marginZero hidden">
-                i_am_so_cutes님 외 2명이 팔로우 합니다.
-              </p>
-            </div>
-            <p className="blue">팔로우</p>
-          </div>
-          <div className="row">
-            <img
-              className="profile-photo active"
-              src="./images/41_jiyeon/6.png"
-              alt="프로필 사진"
-            />
-            <div className="column">
-              <p className="bold marginZero">drink_lover</p>
-              <p className="gray marginZero hidden">
-                mia_seo님 외 5명이 팔로우 합니다.
-              </p>
-            </div>
-            <p className="blue">팔로우</p>
-          </div>
-          <div className="row">
-            <img
-              className="profile-photo active"
-              src="./images/41_jiyeon/7.png"
-              alt="프로필 사진"
-            />
-            <div className="column">
-              <p className="bold marginZero">huhuhu</p>
-              <p className="gray marginZero hidden">
-                cco_cco님 외 9명이 팔로우 합니다.
-              </p>
-            </div>
-            <p className="blue">팔로우</p>
-          </div>
+          ))}
         </div>
       </div>
       <div className="gray">
