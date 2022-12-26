@@ -1,17 +1,20 @@
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 
 function Nav() {
   return (
     <nav>
       <div className="nav-left">
-        <img
-          className="icons"
-          src="https://cdn-icons-png.flaticon.com/512/717/717392.png"
-          alt="instagram"
-        />
-        <a id="toMainPage" href="/main.html">
-          Westagram
-        </a>
+        <Link to="/login_jiyeonSeo">
+          <img
+            className="icons"
+            src="https://cdn-icons-png.flaticon.com/512/717/717392.png"
+            alt="instagram"
+          />
+          <span id="toMainPage" href="/main.html">
+            Westagram
+          </span>
+        </Link>
       </div>
       <div className="nav-center">
         <input id="search" type="text" placeholder="검색" />

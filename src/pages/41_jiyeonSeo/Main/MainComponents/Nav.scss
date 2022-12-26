@@ -7,13 +7,15 @@ nav {
   border-bottom: $border-gray;
 
   .nav-left {
-    @include flexSort(null, null, center);
+    a {
+      @include flexSort(null, null, center);
+      text-decoration: none;
+    }
 
     #toMainPage {
       padding: 5px 10px;
       margin-left: 20px;
       border-left: 2px solid black;
-      text-decoration: none;
       font-family: 'Lobster', cursive;
       color: black;
     }
