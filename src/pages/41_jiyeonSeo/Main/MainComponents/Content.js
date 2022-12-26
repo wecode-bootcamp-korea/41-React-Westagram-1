@@ -4,11 +4,8 @@ import './Content.scss';
 function Comment({ comment, index }) {
   const [like, setLike] = useState(false);
 
-  const handleHeartClick = event => {
+  const handleHeartClick = () => {
     setLike(prev => !prev);
-    like
-      ? (event.target.src = './images/41_jiyeon/heart-fill.png')
-      : (event.target.src = './images/41_jiyeon/heart.png');
   };
 
   const handleDeleteClick = event => {
@@ -22,7 +19,11 @@ function Comment({ comment, index }) {
       <img
         onClick={handleHeartClick}
         className="heart"
-        src="./images/41_jiyeon/heart.png"
+        src={
+          like
+            ? './images/41_jiyeon/heart-fill.png'
+            : './images/41_jiyeon/heart.png'
+        }
         alt="하트"
       />
       <span className="gray">42분 전</span>
@@ -54,9 +55,6 @@ function Content() {
 
   const handleHeartClick = event => {
     setLike(prev => !prev);
-    like
-      ? (event.target.src = './images/41_jiyeon/heart-fill.png')
-      : (event.target.src = './images/41_jiyeon/heart.png');
   };
 
   const handleDeleteClick = event => {
@@ -118,7 +116,11 @@ function Content() {
               <img
                 className="heart"
                 onClick={handleHeartClick}
-                src="./images/41_jiyeon/heart.png"
+                src={
+                  like
+                    ? './images/41_jiyeon/heart-fill.png'
+                    : './images/41_jiyeon/heart.png'
+                }
                 alt="하트"
               />
               <span className="gray">42분 전</span>
