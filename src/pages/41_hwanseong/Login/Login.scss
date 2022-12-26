@@ -1,3 +1,49 @@
-* {
-  box-sizing: border-box;
+.body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: 600px;
+  border: 1px solid gainsboro;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 30px;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
+.inputId {
+  padding: 10px 30px;
+  margin: 5px 40px;
+  border: 1px solid gainsboro;
+}
+.inputPassword {
+  padding: 10px 30px;
+  margin: 5px 40px;
+  border: 1px solid gainsboro;
+}
+.inputButton {
+  margin: 20px 40px;
+  padding: 10px 30px;
+  background-color: #b2dffc;
+  color: white;
+  border: 1px solid gainsboro;
+}
+.inputButtonDisabled {
+  background-color: #0095f6;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 100px;
+  color: #385898;
 }
