@@ -50,6 +50,14 @@
       font-weight: bold;
     }
 
+    .blocked {
+      background-color: $color-light-blue;
+    }
+
+    .unBlocked {
+      background-color: $color-blue;
+    }
+
     p {
       @include positionSort(null, null, 30px, null);
       text-decoration: none;

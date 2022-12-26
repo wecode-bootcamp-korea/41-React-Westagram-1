@@ -6,12 +6,6 @@ function LoginJiyeon() {
   const [idValue, setIdValue] = useState('');
   const [pwValue, setPwValue] = useState('');
   const active = idValue.includes('@') && pwValue.length > 4;
-  let isBlocked;
-  active ? (isBlocked = false) : (isBlocked = true);
-  let color;
-  isBlocked
-    ? (color = { backgroundColor: '#c5e1fb' })
-    : (color = { backgroundColor: '#2099f1' });
 
   const savedUserId = event => {
     setIdValue(event.target.value);
@@ -48,9 +42,8 @@ function LoginJiyeon() {
           />
         </div>
         <button
-          className="loginBtn"
-          disabled={isBlocked}
-          style={color}
+          className={'loginBtn' + (active ? ' unBlocked' : ' blocked')}
+          disabled={!active}
           onClick={handleClickEvent}
         >
           로그인
