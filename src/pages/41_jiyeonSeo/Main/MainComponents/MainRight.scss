@@ -66,6 +66,18 @@
     }
   }
 
+  .info {
+    width: 50px;
+
+    &::after {
+      content: '•';
+    }
+
+    &:last-child::after {
+      content: '';
+    }
+  }
+
   .scroll {
     margin-top: 10px;
     overflow: scroll;

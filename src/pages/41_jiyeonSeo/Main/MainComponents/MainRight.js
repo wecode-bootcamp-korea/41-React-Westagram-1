@@ -1,4 +1,17 @@
+import { STORIES_PROFILE, ASIDE_INFO } from './data';
 import './MainRight.scss';
+
+function Stories({ id, src, name }) {
+  return (
+    <div className="row" key={id}>
+      <img className="profile-photo active" src={src} alt="프로필 사진" />
+      <div className="column">
+        <p className="bold marginZero">{name}</p>
+        <p className="gray marginZero">15분 전</p>
+      </div>
+    </div>
+  );
+}
 
 function MainRight() {
   return (
@@ -16,52 +29,12 @@ function MainRight() {
           <p className="bold marginZero">모두 보기</p>
         </div>
         <div className="column gap scroll">
-          <div className="row">
-            <img
-              className="profile-photo active"
-              src="./images/41_jiyeon/1.png"
-              alt="프로필 사진"
-            />
-            <div className="column">
-              <p className="bold marginZero">greenMon</p>
-              <p className="gray marginZero">15분 전</p>
-            </div>
-          </div>
-          <div className="row">
-            <img
-              className="profile-photo active"
-              src="./images/41_jiyeon/2.png"
-              alt="프로필 사진"
-            />
-            <div className="column">
-              <p className="bold marginZero">cco_cco</p>
-              <p className="gray marginZero">45분 전</p>
-            </div>
-          </div>
-          <div className="row">
-            <img
-              className="profile-photo active"
-              src="./images/41_jiyeon/3.png"
-              alt="프로필 사진"
-            />
-            <div className="column">
-              <p className="bold marginZero">queoqa</p>
-              <p className="gray marginZero">3시간 전</p>
-            </div>
-          </div>
-          <div className="row">
-            <img
-              className="profile-photo active"
-              src="./images/41_jiyeon/4.png"
-              alt="프로필 사진"
-            />
-            <div className="column">
-              <p className="bold marginZero">i_am_so_cute</p>
-              <p className="gray marginZero">20시간 전</p>
-            </div>
-          </div>
+          {STORIES_PROFILE.map(story => (
+            <Stories id={story.id} src={story.src} name={story.name} />
+          ))}
         </div>
       </div>
+
       <div className="recommend">
         <div className="recommend-top">
           <p className="gray marginZero">회원님을 위한 추천</p>
@@ -114,13 +87,11 @@ function MainRight() {
       </div>
       <div className="gray">
         <br />
-        instagram 정보•지원•홍보 센터•API•
-        <br />
-        채용 정보•개인정보처리방침•약관•
-        <br />
-        디렉터리•프로필•해시태그•언어
-        <br />
-        <br />© 2019 INSTAGRAM
+        {ASIDE_INFO.map(aside => (
+          <span className="info" key={aside.id}>
+            {aside.data}
+          </span>
+        ))}
       </div>
     </div>
   );
