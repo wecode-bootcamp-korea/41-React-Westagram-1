@@ -3,7 +3,7 @@ import './MainRight.scss';
 
 function Stories({ id, src, name }) {
   return (
-    <div className="row" key={id}>
+    <div className="row">
       <img className="profile-photo active" src={src} alt="프로필 사진" />
       <div className="column">
         <p className="bold marginZero">{name}</p>
@@ -43,7 +43,7 @@ function MainRight() {
         </div>
         <div className="column gap scroll">
           {STORIES_PROFILE.map(story => (
-            <Stories id={story.id} src={story.src} name={story.name} />
+            <Stories key={story.id} src={story.src} name={story.name} />
           ))}
         </div>
       </div>
