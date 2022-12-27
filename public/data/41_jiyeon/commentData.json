@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Harry Potter",
+    "text": "입 닥쳐 말포이",
+    "liked": true
+  },
+  {
+    "id": 2,
+    "name": "Hermione Granger",
+    "text": "난 퇴학이 죽기보다 싫어",
+    "liked": false
+  },
+  {
+    "id": 3,
+    "name": "Ron Weasley",
+    "text": "난 거미가 싫어..!!",
+    "liked": false
+  }
+]

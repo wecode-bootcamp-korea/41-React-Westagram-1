@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "greenMon",
+    "profileSrc": "./images/41_jiyeon/1.png",
+    "src": "./images/41_jiyeon/8.jpeg",
+    "text": "백숙먹으러가자했자나",
+    "liked": false
+  },
+  {
+    "id": 2,
+    "name": "cco_cco",
+    "profileSrc": "./images/41_jiyeon/2.png",
+    "src": "./images/41_jiyeon/9.jpeg",
+    "text": "자기야 왜 또 칭얼거려",
+    "liked": true
+  }
+]

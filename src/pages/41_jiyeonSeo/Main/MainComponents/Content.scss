@@ -59,11 +59,14 @@
   }
 
   .comments {
-    height: 150px;
-    overflow: scroll;
+    margin-left: 5px;
+    div {
+      height: 150px;
+      overflow: scroll;
 
-    &::-webkit-scrollbar {
-      display: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     p {

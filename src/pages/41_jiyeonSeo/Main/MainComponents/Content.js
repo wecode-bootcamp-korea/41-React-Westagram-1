@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Content.scss';
 
-function Comment({ comment, index }) {
-  const [like, setLike] = useState(false);
+function Comment({ name, text, liked }) {
+  const [like, setLike] = useState(liked);
 
   const handleHeartClick = () => {
     setLike(prev => !prev);
@@ -13,9 +13,9 @@ function Comment({ comment, index }) {
   };
 
   return (
-    <li key={index}>
-      <span className="bold">mia_seo</span>
-      <span>{comment}</span>
+    <li>
+      <span className="bold">{name}</span>
+      <span>{text}</span>
       <img
         onClick={handleHeartClick}
         className="heart"
@@ -34,10 +34,10 @@ function Comment({ comment, index }) {
   );
 }
 
-function Content() {
+function Feed({ name, profileSrc, src, text, liked }) {
   const [input, setInput] = useState('');
   const [comments, setComments] = useState([]);
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useState(liked);
   let readyToClick = input !== '' ? true : false;
 
   const onChange = event => {
@@ -57,8 +57,122 @@ function Content() {
     setLike(prev => !prev);
   };
 
-  const handleDeleteClick = event => {
-    event.target.parentElement.remove();
+  return (
+    <div className="feed">
+      <div className="feed-top">
+        <img className="profile-photo" src={profileSrc} alt="프로필 이미지" />
+        <p>{name}</p>
+        <img src="./images/41_jiyeon/dot.png" alt="dot" />
+      </div>
+      <img className="feed-img" src={src} alt="피드사진" />
+      <div className="like-emojis">
+        <img
+          onClick={handleHeartClick}
+          src={
+            like
+              ? './images/41_jiyeon/heart-fill.png'
+              : './images/41_jiyeon/heart.png'
+          }
+          alt="하트"
+        />
+        <img
+          className="small-emojis"
+          src="./images/41_jiyeon/bubble-empty.png"
+          alt="댓글"
+        />
+        <img
+          className="small-emojis"
+          src="./images/41_jiyeon/upload (1).png"
+          alt="업로드"
+        />
+        <img
+          className="small-emojis"
+          src="./images/41_jiyeon/bookmark.png"
+          alt="북마크"
+        />
+      </div>
+      <p className="txt-likes">
+        <img
+          className="small-image"
+          src="./images/41_jiyeon/mia.png"
+          alt="프로필 이미지"
+        />
+        <span className="bold">mia_seo</span>님
+        <span className="bold">외 100명</span>이 좋아합니다
+      </p>
+      <div className="comments">
+        <p>
+          <span className="bold">{name}</span> {text}
+        </p>
+        <div>
+          <ul className="comment-lists">
+            {comments.map((comment, index) => (
+              <Comment key={index} name={name} text={comment} liked={false} />
+            ))}
+          </ul>
+        </div>
+      </div>
+      <form id="comment" onSubmit={onSubmit}>
+        <input
+          onChange={onChange}
+          id="commentInput"
+          type="text"
+          placeholder="댓글달기"
+          required
+          value={input}
+        />
+        <button
+          style={readyToClick ? { color: '#2099f1' } : { color: '#c5e1fb' }}
+        >
+          게시
+        </button>
+      </form>
+    </div>
+  );
+}
+
+function Content() {
+  /*mock data로 들어온 commnetList*/
+  const [commentLists, setCommentLists] = useState([]);
+  /*mock data로 들어온 feedList*/
+  const [feedLists, setFeedLists] = useState([]);
+
+  useEffect(() => {
+    fetch('./data/41_jiyeon/commentData.json', {
+      method: 'GET',
+    })
+      .then(Response => Response.json())
+      .then(result => setCommentLists(result));
+  });
+
+  useEffect(() => {
+    fetch('./data/41_jiyeon/feedData.json', {
+      method: 'GET',
+    })
+      .then(Response => Response.json())
+      .then(result => setFeedLists(result));
+  });
+
+  const [input, setInput] = useState('');
+  const [comments, setComments] = useState([]);
+  const [like, setLike] = useState(true);
+  let readyToClick = input !== '' ? true : false;
+
+  const onChange = event => {
+    setInput(event.target.value);
+  };
+
+  const onSubmit = event => {
+    event.preventDefault();
+    if (input === '') {
+      return;
+    }
+    setComments(prev => [...prev, input]);
+    setInput('');
+  };
+
+  const handleHeartClick = event => {
+    setLike(prev => !prev);
   };
 
   return (
@@ -79,7 +193,15 @@ function Content() {
           alt="붕어빵루피"
         />
         <div className="like-emojis">
-          <img src="./images/41_jiyeon/heart-fill.png" alt="하트" />
+          <img
+            onClick={handleHeartClick}
+            src={
+              like
+                ? './images/41_jiyeon/heart-fill.png'
+                : './images/41_jiyeon/heart.png'
+            }
+            alt="하트"
+          />
           <img
             className="small-emojis"
             src="./images/41_jiyeon/bubble-empty.png"
@@ -109,29 +231,31 @@ function Content() {
           <p>
             <span className="bold">mia_seo</span> 인생... 힘들다....💧
           </p>
-          <ul className="comment-lists">
-            <li>
-              <span className="bold">wecode_bootcamp</span>
-              <span>여기서 이러시면 안됩니다!!</span>
-              <img
-                className="heart"
-                onClick={handleHeartClick}
-                src={
-                  like
-                    ? './images/41_jiyeon/heart-fill.png'
-                    : './images/41_jiyeon/heart.png'
-                }
-                alt="하트"
+          <div>
+            <ul className="comment-lists">
+              <Comment
+                name="wecode_bootcamp"
+                text="여기서 이러시면 안됩니다!!"
+                liked={true}
               />
-              <span className="gray">42분 전</span>
-              <span className="delete gray" onClick={handleDeleteClick}>
-                삭제
-              </span>
-            </li>
-            {comments.map((comment, index) => (
-              <Comment comment={comment} key={index} />
-            ))}
-          </ul>
+              {commentLists.map(comment => (
+                <Comment
+                  key={comment.id}
+                  name={comment.name}
+                  text={comment.text}
+                  liked={comment.liked}
+                />
+              ))}
+              {comments.map((comment, index) => (
+                <Comment
+                  key={index}
+                  name="miya___ho"
+                  text={comment}
+                  liked={false}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
         <form id="comment" onSubmit={onSubmit}>
           <input
@@ -149,6 +273,16 @@ function Content() {
           </button>
         </form>
       </div>
+      {feedLists.map(feed => (
+        <Feed
+          key={feed.id}
+          name={feed.name}
+          profileSrc={feed.profileSrc}
+          src={feed.src}
+          text={feed.text}
+          liked={feed.liked}
+        />
+      ))}
     </div>
   );
 }
