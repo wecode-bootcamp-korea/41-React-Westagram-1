@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+import Comment from './Comment.js';
 import './Main.scss';
 
-const Feed = () => {
-  // const addComment = () {
-  //   setComments([...comments, commentInput])
-  // }
+const Feeds = () => {
+  const [comment, setComment] = useState('');
+  const [commentLi, setCommentLi] = useState([]);
+  const onChange = e => {
+    setComment(e.target.value);
+  };
+
+  const onSubmit = () => {
+    setCommentLi([...commentLi, comment]);
+    setComment('');
+  };
 
   return (
     <main className="main">
@@ -59,10 +67,9 @@ const Feed = () => {
           </p>
           <div className="article-comments">
             <ul className="comment-lists">
-              <li>
-                <span className="name">sally.eee</span>
-                <span> hello</span>
-              </li>
+              {commentLi.map((i, key) => (
+                <Comment i={i} key={key} />
+              ))}
             </ul>
           </div>
           <div className="article-comment-input">
@@ -70,8 +77,12 @@ const Feed = () => {
               className="comment-input"
               type="text"
               placeholder="댓글달기..."
+              value={comment}
+              onChange={onChange}
             />
-            <button className="submit">게시</button>
+            <button className="submit" onClick={onSubmit}>
+              게시
+            </button>
           </div>
         </article>
       </div>
@@ -131,4 +142,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Feeds;

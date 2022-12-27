@@ -47,7 +47,8 @@ const Login = () => {
           className="login-btn"
           type="button"
           onClick={goToMain}
-          disabled={isValid ? false : true}
+          // disabled={isValid ? false : true}
+          disabled={!isValid}
           style={
             isValid
               ? { backgroundColor: '#0095f6' }
