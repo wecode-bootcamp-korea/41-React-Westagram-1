@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.scss';
 
 const Main = () => {
+  const [comment, setComment] = useState('');
+
   return (
     <section className="main">
       <div className="nav">
@@ -53,8 +55,10 @@ const Main = () => {
                   <img src=".images/sad.png" alt="!" />
                 </div>
               </div>
-              <div>블라블라블라블라</div>
-              <input placeholder="댓글입력" />
+              <div className="list">
+                <h6>asdasdasd</h6>
+                <input placeholder="댓글입력" />
+              </div>
             </div>
           </div>
         </div>
