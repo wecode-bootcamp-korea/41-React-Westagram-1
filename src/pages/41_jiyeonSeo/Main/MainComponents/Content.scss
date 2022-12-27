@@ -59,9 +59,9 @@
   }
 
   .comments {
-    margin-left: 5px;
+    margin: 0 0 50px 5px;
     div {
-      height: 150px;
+      height: 100px;
       overflow: scroll;
 
       &::-webkit-scrollbar {
@@ -102,6 +102,10 @@
 
     span {
       margin-right: 5px;
+    }
+
+    .text {
+      display: inline-block;
     }
 
     & li img {

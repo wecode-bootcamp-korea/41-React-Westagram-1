@@ -3,7 +3,6 @@
 
 .wrapMain {
   @include flexSort(column, center, center);
-  @include widthHeightSort(100vw, 100vh);
   font-size: 15px;
 
   main {

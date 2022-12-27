@@ -3,7 +3,7 @@
 
 nav {
   @include flexSort(null, space-around, center);
-  @include widthHeightSort(100%, 10%);
+  @include widthHeightSort(100%, 50px);
   border-bottom: $border-gray;
 
   .nav-left {

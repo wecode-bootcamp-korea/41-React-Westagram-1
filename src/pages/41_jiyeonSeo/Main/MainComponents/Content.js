@@ -15,7 +15,7 @@ function Comment({ name, text, liked }) {
   return (
     <li>
       <span className="bold">{name}</span>
-      <span>{text}</span>
+      <span className="text">{text}</span>
       <img
         onClick={handleHeartClick}
         className="heart"
