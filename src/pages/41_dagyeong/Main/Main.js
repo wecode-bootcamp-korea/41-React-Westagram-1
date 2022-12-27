@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Main.scss';
+import Comment from './Components/Comment';
 
 function MainDagyeong() {
   const [commentValue, setComment] = useState(''); //사용자가 입력하고 있는 댓글
@@ -16,8 +17,17 @@ function MainDagyeong() {
   const nickName = 'maratang42';
   // console.log(feedComments);
   let onEnter = event => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && commentValue.length > 0) {
       // console.log(event.key);
+      // console.log(feedComments);
+      feedComments.push(commentValue);
+      setCommentList(feedComments);
+      setComment('');
+    }
+  };
+
+  let clickBtn = event => {
+    if (commentValue.length > 0) {
       // console.log(feedComments);
       feedComments.push(commentValue);
       setCommentList(feedComments);
@@ -103,12 +113,13 @@ function MainDagyeong() {
                 </li>
               </ul>
               <ul className="comment_ul">
+                {feedComments.map((comment, idx) => (
+                  // <span className='nickName'>{nickName}</span>
+                  // <span className="comment">{comments}</span>
+                  <Comment comments={comment} key={idx} />
+                ))}
                 <li className="comment_box">
-                  <span className="nickName">{nickName}</span>
-                  {feedComments.map(comments => (
-                    // <span className='nickName'>{nickName}</span>
-                    <span className="comment">{comments}</span>
-                  ))}
+                  {/* <span className="nickName">{nickName}</span> */}
                 </li>
               </ul>
             </div>
@@ -127,9 +138,9 @@ function MainDagyeong() {
                 //     ? setIsValid(true)
                 //     : setIsValid(false);
                 // }}
-                onKeyDown={onEnter}
+                onKeyUp={onEnter}
               />
-              <button className="comment_btn" id="post">
+              <button className="comment_btn" id="post" onClick={clickBtn}>
                 게시
               </button>
             </div>

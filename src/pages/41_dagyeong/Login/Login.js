@@ -10,6 +10,7 @@ function LoginDagyeong() {
   // const [disabled, setDisabled] = React.useState(true);
 
   const saveUserId = event => {
+    // console.log(event);
     setId(event.target.value);
     // console.log(event.target.value);
   };
@@ -31,7 +32,7 @@ function LoginDagyeong() {
   return (
     <div className="login_wraaper">
       <div className="login">
-        <h2>Westagram</h2>
+        <h2>Instagram</h2>
         <div className="login_box">
           <input
             className="login_id"

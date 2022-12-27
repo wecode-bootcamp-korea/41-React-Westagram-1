@@ -118,6 +118,8 @@ main {
       padding: 0;
       // margin-left: 10px;
       margin: 10px 10px;
+      display: flex;
+      flex-direction: column;
 
       .nickName {
         font-weight: bold;
