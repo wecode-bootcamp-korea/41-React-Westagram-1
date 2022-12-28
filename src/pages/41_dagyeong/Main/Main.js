@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Main.scss';
 import Comment from './Components/Comment';
+import asideData from './asideData';
 
 function MainDagyeong() {
   const [commentValue, setComment] = useState(''); //사용자가 입력하고 있는 댓글
@@ -14,7 +15,7 @@ function MainDagyeong() {
   };
 
   const feedComments = [...comments];
-  const nickName = 'maratang42';
+  // const nickName = 'maratang42';
   // console.log(feedComments);
   let onEnter = event => {
     if (event.key === 'Enter' && commentValue.length > 0) {
@@ -251,6 +252,19 @@ function MainDagyeong() {
                 </div>
               </div>
             </div>
+            <div className="aside">
+              {/* {console.log('asideData :', asideData)} */}
+              {asideData.map(asideData => {
+                return <span key={asideData.id}>{asideData.name} ・ </span>;
+                // <Aside key={id} name={aside} />;
+              })}
+
+              {/* <span>
+                소개 ・ 도움말 ・ 홍보 센터 ・ API ・ 채용 정보 ・
+                개인정보처리방침 ・ 약관 ・ 위치 ・ 언어
+              </span> */}
+              <p>2022 INSTAGRAM FROM META</p>
+            </div>
           </div>
         </div>
       </main>
@@ -259,3 +273,15 @@ function MainDagyeong() {
 }
 
 export default MainDagyeong;
+
+// const ASIDE = [
+//   { id: 1, name: '소개' },
+//   { id: 2, name: '도움말' },
+//   { id: 3, name: '홍보센터' },
+//   { id: 4, name: 'API' },
+//   { id: 5, name: '채용 정보' },
+//   { id: 6, name: '개인정보처리방침' },
+//   { id: 7, name: '약관' },
+//   { id: 8, name: '위치' },
+//   { id: 9, name: '언어' },
+// ];
