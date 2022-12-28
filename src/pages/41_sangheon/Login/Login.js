@@ -50,7 +50,7 @@ export default function LoginSangheon() {
                 <button
                   className="btn_login"
                   onClick={() => navigate('/main_sangheon')}
-                  disabled={isValid ? false : true}
+                  disabled={!isValid}
                 >
                   로그인
                 </button>

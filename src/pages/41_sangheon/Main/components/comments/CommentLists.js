@@ -12,8 +12,7 @@ function CommentLists({ commentLists, editComment, deleteComment }) {
           <Comment
             key={commentId}
             comment={comment}
-            commentId={commentId}
-            isEditing={selectedCommentIndex === commentId ? true : false}
+            isEditing={selectedCommentIndex === commentId}
             setSelectedCommentIndex={setSelectedCommentIndex}
             editComment={editComment}
             deleteComment={deleteComment}

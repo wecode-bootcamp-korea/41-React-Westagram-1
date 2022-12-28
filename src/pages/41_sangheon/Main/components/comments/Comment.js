@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
 export default function Comment({
-  comment: { username, content },
-  commentId,
-  isEditing,
+  comment: { id, username, content },
+  isEditing = false,
   setSelectedCommentIndex,
   editComment,
   deleteComment,
@@ -15,17 +14,17 @@ export default function Comment({
     setIsLiked(prev => !prev);
   };
 
-  const handleDeleteBtn = e => {
-    deleteComment(commentId);
+  const handleDeleteBtn = () => {
+    deleteComment(id);
   };
 
-  const handleEditInput = e => {
-    editComment(commentId, editValue);
+  const handleEditBtn = () => {
+    editComment(id, editValue);
     setSelectedCommentIndex(0);
   };
 
   return (
-    <li id={commentId}>
+    <li id={id}>
       <span className="wrap-cmt">
         <span className="cmt-user">{username}</span>
         {isEditing ? (
@@ -33,7 +32,7 @@ export default function Comment({
             type="text"
             value={editValue}
             onChange={e => setEditValue(e.target.value)}
-            onKeyDown={e => (e.key === 'Enter' ? handleEditInput(e) : null)}
+            onKeyDown={e => (e.key === 'Enter' ? handleEditBtn() : null)}
           />
         ) : (
           <span className="cmt-cont">{content}</span>
@@ -42,8 +41,8 @@ export default function Comment({
       <span className="wrap-btn">
         <button
           className="btn-edit"
-          onClick={e =>
-            isEditing ? handleEditInput(e) : setSelectedCommentIndex(commentId)
+          onClick={() =>
+            isEditing ? handleEditBtn() : setSelectedCommentIndex(id)
           }
         >
           <i className="fa fa-solid fa-pencil" />
@@ -52,11 +51,7 @@ export default function Comment({
           <i className="fa fa-thin fa-xmark" />
         </button>
         <button className="btn-like" onClick={handleLikeBtn}>
-          <i
-            className={
-              isLiked ? 'fa fa-solid fa-heart' : 'fa fa-regular fa-heart'
-            }
-          />
+          <i className={`fa fa-${isLiked ? 'solid' : 'regular'} fa-heart`} />
         </button>
       </span>
     </li>
