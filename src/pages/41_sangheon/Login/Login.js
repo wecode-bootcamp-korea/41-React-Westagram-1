@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
@@ -8,17 +8,13 @@ export default function LoginSangheon() {
     email: '',
     password: '',
   });
-  const [isValid, setIsValid] = useState(false);
 
-  const handleUserInfo = e => {
+  const getUserInfo = e => {
     const { name, value } = e.target;
     setUserInfo({ ...userInfo, [name]: value });
   };
 
-  useEffect(() => {
-    setIsValid(userInfo.email.includes('@') && userInfo.password.length >= 5);
-  }, [userInfo]);
-
+  const isValid = userInfo.email.includes('@') && userInfo.password.length >= 5;
   return (
     <main id="main">
       <article className="art_login">
@@ -33,7 +29,7 @@ export default function LoginSangheon() {
                   placeholder="전화번호, 사용자 이름 또는 이메일"
                   className="inp_g"
                   value={userInfo.email}
-                  onChange={handleUserInfo}
+                  onChange={getUserInfo}
                 />
               </div>
               <div className="box_inp">
@@ -43,7 +39,7 @@ export default function LoginSangheon() {
                   placeholder="비밀번호"
                   className="inp_g"
                   value={userInfo.password}
-                  onChange={handleUserInfo}
+                  onChange={getUserInfo}
                 />
               </div>
               <div className="btn_wrap">
