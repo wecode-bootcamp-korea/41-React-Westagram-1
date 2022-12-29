@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
@@ -29,6 +29,34 @@ function LoginDagyeong() {
     ? (color = { backgroundColor: 'blue' })
     : (color = { backgroundColor: '#56a5f2' });
 
+  const handleClick = () => {
+    fetch('http://10.58.52.174:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('login-token'),
+      },
+      body: JSON.stringify({
+        name: '다경',
+        email: 'id',
+        profileImageUrl: 'http://',
+        password: 'pw',
+        // email: 'jdk@',
+        // password: '1234',
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        if (data.accessToken) {
+          localStorage.setItem('token', data.accessToken);
+        }
+      });
+  };
+
+  console.log(localStorage.getItem('token'));
+  // set 넣고 get 갖고오고 => setItem / getItem
+
   return (
     <div className="login_wraaper">
       <div className="login">
@@ -51,9 +79,10 @@ function LoginDagyeong() {
           <div>
             <button
               className="login_btn"
-              onClick={() => {
-                navigate('/main_dagyeong');
-              }}
+              // onClick={() => {
+              //   navigate('/main_dagyeong');
+              // }}
+              onClick={handleClick}
               style={color}
               disabled={blocked}
             >

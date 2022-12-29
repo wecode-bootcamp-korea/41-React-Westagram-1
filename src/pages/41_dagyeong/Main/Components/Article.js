@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Comment from './Comment';
 import './Article.scss';
 import { useState } from 'react';
@@ -7,6 +7,17 @@ function Article() {
   const [commentValue, setComment] = useState(''); //사용자가 입력하고 있는 댓글
   const [comments, setCommentList] = useState([]); // 댓글 리스트
   // const [isValid, setIsValid] = useState(false); // 댓글 게시 가능 여부
+  const [articles, setArticles] = useState();
+
+  useEffect(() => {
+    // data fetching side effect
+    fetch('/public/data/MockData.json')
+      .then(response => response.json())
+      .then(result => {
+        console.log('hi');
+        setArticles(result);
+      });
+  }, []);
 
   const commentInput = event => {
     setComment(event.target.value);

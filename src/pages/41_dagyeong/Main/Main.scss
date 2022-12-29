@@ -13,6 +13,7 @@ body {
 
 main {
   display: flex;
+  justify-content: center;
 }
 
 .navbar {
@@ -44,103 +45,3 @@ main {
     margin-right: 10px;
   }
 }
-
-// /* main_right */
-// .main_right {
-//   margin-left: 15px;
-
-//   .myprofile {
-//     display: flex;
-
-//     .myprofile span:nth-child(1) {
-//       font-weight: bold;
-//     }
-//   }
-
-//   .my_profile {
-//     display: flex;
-//     flex-direction: column;
-//     margin-left: 10px;
-//   }
-
-//   .myprofile_img {
-//     width: 50px;
-//     height: 50px;
-//     border-radius: 70%;
-//   }
-// }
-
-// /* 스토리 */
-
-// .storybox {
-//   border: 1px solid #e6e6e6;
-//   width: 380px;
-//   height: 185px;
-//   margin-bottom: 20px;
-//   margin-top: 10px;
-//   border-radius: 3px;
-
-//   .storybox_top {
-//     padding: 10px;
-//     color: #b9b9b9;
-//   }
-
-//   .story_all_view {
-//     margin-left: 252px;
-//     font-weight: bold;
-//     color: black;
-//   }
-// }
-// .story_nickname {
-//   display: flex;
-
-//   .story_state {
-//     display: flex;
-//     flex-direction: column;
-
-//     .story_time {
-//       color: #b9b9b9;
-//     }
-//   }
-// }
-
-// .story_anotherpeople {
-//   margin: 0;
-//   color: #b9b9b9;
-// }
-
-// .story_state p {
-//   margin: 0;
-// }
-
-// .recommend {
-//   //1
-//   border: 1px solid #e6e6e6;
-//   width: 380px;
-//   height: 200px;
-//   border-radius: 3px;
-
-//   .recommend_top {
-//     padding: 10px;
-//     color: #b9b9b9;
-//   }
-
-//   .recommend_all_view {
-//     margin-left: 175px;
-//     font-weight: bold;
-//     color: black;
-//   }
-
-//   .recommend_follow > button {
-//     border: none;
-//     background-color: transparent;
-//     margin-top: 15px;
-//     color: #56a5f2;
-//   }
-// }
-
-// .aside {
-//   width: 380px;
-//   color: #b9b9b9;
-//   margin-top: 20px;
-// }
