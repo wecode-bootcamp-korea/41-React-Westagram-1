@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Aside from './Aside';
 // import Comment from '../components/Comment.js';
 import '../Main.scss';
 
@@ -55,7 +56,7 @@ const Mainright = () => {
           </div>
         </div>
       </div>
-      <div className="aside">box</div>
+      <Aside />
     </div>
   );
 };

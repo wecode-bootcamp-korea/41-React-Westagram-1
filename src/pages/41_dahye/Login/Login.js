@@ -21,6 +21,21 @@ const Login = () => {
     setPw(event.target.value);
   };
 
+  const loginClick = () => {
+    fetch('http://10.58.52.249:3000/user/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({ email: id, password: pw }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log(result);
+        localStorage.setItem('accessToken', result.accessToken); // setItem 메서드로
+      });
+  };
+
+  // console.log(localStorage.getItem('accessToken')); // 콘솔에 출력하기 위해 getItem 메서드 사용
+
   // 사용자 입력 데이터 저장되는지 확인하는 콘솔
   //console.log('id:', id);
   //console.log('pw:', pw);
@@ -46,7 +61,9 @@ const Login = () => {
         <button
           className="login-btn"
           type="button"
-          onClick={goToMain}
+          // fetch 실행함수
+          onClick={loginClick}
+          // onClick={goToMain}
           // disabled={isValid ? false : true}
           disabled={!isValid}
           style={
