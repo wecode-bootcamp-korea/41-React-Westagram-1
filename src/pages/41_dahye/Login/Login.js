@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import './Login.scss';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import './Login.scss';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -22,8 +21,9 @@ const Login = () => {
     setPw(event.target.value);
   };
 
-  console.log('id:', id);
-  console.log('pw:', pw);
+  // 사용자 입력 데이터 저장되는지 확인하는 콘솔
+  //console.log('id:', id);
+  //console.log('pw:', pw);
 
   return (
     <div className="Login">

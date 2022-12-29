@@ -1,6 +1,6 @@
 import React from 'react';
-import Nav from './Nav.js';
-import Feeds from './Feeds.js';
+import Nav from './components/Nav.js';
+import Feeds from './components/Feeds.js';
 import './Main.scss';
 
 function Main() {
