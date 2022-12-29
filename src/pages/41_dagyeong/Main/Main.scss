@@ -11,6 +11,10 @@ body {
   height: 24px;
 }
 
+main {
+  display: flex;
+}
+
 .navbar {
   //1
   display: flex;
@@ -41,221 +45,102 @@ body {
   }
 }
 
-/* main(article) */
+// /* main_right */
+// .main_right {
+//   margin-left: 15px;
 
-main {
-  //1
-  display: flex;
-  justify-content: center;
+//   .myprofile {
+//     display: flex;
 
-  .feeds {
-    display: flex;
-    // width: 470px;
+//     .myprofile span:nth-child(1) {
+//       font-weight: bold;
+//     }
+//   }
 
-    article {
-      width: 470px;
-      // height: 750px;
-      border: 1px solid #e6e6e6;
-      border-radius: 5px;
-      // height: 770px;
-      // height: 770px;
-    }
+//   .my_profile {
+//     display: flex;
+//     flex-direction: column;
+//     margin-left: 10px;
+//   }
 
-    .feedTop {
-      display: flex;
-      align-items: center;
-      height: 50px;
-    }
+//   .myprofile_img {
+//     width: 50px;
+//     height: 50px;
+//     border-radius: 70%;
+//   }
+// }
 
-    .feedprofile_img {
-      width: 35px;
-      height: 35px;
-      border-radius: 70%;
-      margin: 5px 10px;
-    }
+// /* 스토리 */
 
-    .feedTop_option {
-      margin-left: 330px;
-      width: 32px;
-      height: 32px;
-    }
-  }
+// .storybox {
+//   border: 1px solid #e6e6e6;
+//   width: 380px;
+//   height: 185px;
+//   margin-bottom: 20px;
+//   margin-top: 10px;
+//   border-radius: 3px;
 
-  .feeds_img {
-    width: 468px;
-    height: 470px;
-  }
+//   .storybox_top {
+//     padding: 10px;
+//     color: #b9b9b9;
+//   }
 
-  .article_icons > img {
-    width: 28px;
-    height: 28px;
-  }
+//   .story_all_view {
+//     margin-left: 252px;
+//     font-weight: bold;
+//     color: black;
+//   }
+// }
+// .story_nickname {
+//   display: flex;
 
-  .article_icons img:nth-child(1) {
-    margin-left: 5px;
-  }
+//   .story_state {
+//     display: flex;
+//     flex-direction: column;
 
-  .article_icons img:nth-child(-n + 3) {
-    margin-right: 5px;
-  }
+//     .story_time {
+//       color: #b9b9b9;
+//     }
+//   }
+// }
 
-  .article_icons img:nth-child(4) {
-    margin-left: 332px;
-  }
+// .story_anotherpeople {
+//   margin: 0;
+//   color: #b9b9b9;
+// }
 
-  .like {
-    margin-left: 10px;
-    font-size: 14px;
-  }
+// .story_state p {
+//   margin: 0;
+// }
 
-  .commentLists {
-    // overflow: hidden;
-    // max-height: 100%;
-    // padding: 0;
+// .recommend {
+//   //1
+//   border: 1px solid #e6e6e6;
+//   width: 380px;
+//   height: 200px;
+//   border-radius: 3px;
 
-    .comment_ul {
-      list-style: none;
-      padding: 0;
-      // margin-left: 10px;
-      margin: 10px 10px;
-      display: flex;
-      flex-direction: column;
+//   .recommend_top {
+//     padding: 10px;
+//     color: #b9b9b9;
+//   }
 
-      .nickName {
-        font-weight: bold;
-      }
+//   .recommend_all_view {
+//     margin-left: 175px;
+//     font-weight: bold;
+//     color: black;
+//   }
 
-      .comment {
-        margin-left: 10px;
-      }
+//   .recommend_follow > button {
+//     border: none;
+//     background-color: transparent;
+//     margin-top: 15px;
+//     color: #56a5f2;
+//   }
+// }
 
-      .delete {
-        margin-left: 10px;
-      }
-    }
-  }
-}
-.comment_box {
-  display: flex;
-  margin-top: 0;
-  // flex-direction: column;
-}
-hr {
-  background: #e6e6e6;
-  height: 1px;
-  border: 0;
-}
-
-.do_comment > input {
-  width: 420px;
-  height: 30px;
-  border: none;
-  text-indent: 10px;
-  margin-bottom: 5px;
-}
-
-.do_comment > button {
-  border: none;
-  background-color: transparent;
-  color: #c5e2fb;
-}
-
-/* main_right */
-.main_right {
-  margin-left: 15px;
-
-  .myprofile {
-    display: flex;
-
-    .myprofile span:nth-child(1) {
-      font-weight: bold;
-    }
-  }
-
-  .my_profile {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-  }
-
-  .myprofile_img {
-    width: 50px;
-    height: 50px;
-    border-radius: 70%;
-  }
-}
-
-/* 스토리 */
-
-.storybox {
-  border: 1px solid #e6e6e6;
-  width: 380px;
-  height: 185px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  border-radius: 3px;
-
-  .storybox_top {
-    padding: 10px;
-    color: #b9b9b9;
-  }
-
-  .story_all_view {
-    margin-left: 252px;
-    font-weight: bold;
-    color: black;
-  }
-}
-.story_nickname {
-  display: flex;
-
-  .story_state {
-    display: flex;
-    flex-direction: column;
-
-    .story_time {
-      color: #b9b9b9;
-    }
-  }
-}
-
-.story_anotherpeople {
-  margin: 0;
-  color: #b9b9b9;
-}
-
-.story_state p {
-  margin: 0;
-}
-
-.recommend {
-  //1
-  border: 1px solid #e6e6e6;
-  width: 380px;
-  height: 200px;
-  border-radius: 3px;
-
-  .recommend_top {
-    padding: 10px;
-    color: #b9b9b9;
-  }
-
-  .recommend_all_view {
-    margin-left: 175px;
-    font-weight: bold;
-    color: black;
-  }
-
-  .recommend_follow > button {
-    border: none;
-    background-color: transparent;
-    margin-top: 15px;
-    color: #56a5f2;
-  }
-}
-
-.aside {
-  width: 380px;
-  color: #b9b9b9;
-  margin-top: 20px;
-}
+// .aside {
+//   width: 380px;
+//   color: #b9b9b9;
+//   margin-top: 20px;
+// }
