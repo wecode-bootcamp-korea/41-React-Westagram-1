@@ -6,6 +6,7 @@ import MainDahye from './pages/41_dahye/Main/Main';
 import MainSangheon from './pages/41_sangheon/Main/Main';
 import MainHwanseong from './pages/41_hwanseong/Main/Main';
 import Bye from './pages/41_jiyeon/Main/Main';
+import MainMs from './pages/MainMs';
 import LoginDagyeong from './pages/41_dagyeong/Login/Login';
 import LoginDahye from './pages/41_dahye/Login/Login';
 import LoginSangheon from './pages/41_sangheon/Login/Login';
@@ -24,6 +25,7 @@ function Router() {
         <Route path="/main_jiyeon" element={<Bye />} />
         <Route path="/main_sangheon" element={<MainSangheon />} />
         <Route path="/login_dagyeong" element={<LoginDagyeong />} />
+        <Route path="/main" element={<MainMs />}
         <Route path="/login_dahye" element={<LoginDahye />} />
         <Route path="/login_hwanseong" element={<LoginHwanseong />} />
         <Route path="/login_sangheon" element={<LoginSangheon />} />
