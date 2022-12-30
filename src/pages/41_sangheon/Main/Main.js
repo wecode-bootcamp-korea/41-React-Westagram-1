@@ -1,8 +1,17 @@
 import React from 'react';
 import './Main.scss';
+import Nav from './components/Nav';
+import Feeds from './components/Feeds';
+import Aside from './components/Aside';
 
-function MainSangheon() {
-  return <h1>Main</h1>;
+export default function MainSangheon() {
+  return (
+    <>
+      <Nav />
+      <main id="main" className="main">
+        <Feeds />
+        <Aside />
+      </main>
+    </>
+  );
 }
-
-export default MainSangheon;
