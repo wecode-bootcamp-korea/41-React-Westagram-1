@@ -1,0 +1,77 @@
+@import '../styles/common.scss';
+@import '../styles/variables.scss';
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapSignUp {
+  @include widthHeightSort(350px, 800px);
+
+  div {
+    @include borderSort($border-gray, 2px);
+    @include flexSort(column, null, center);
+    margin: 20px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 40px;
+    font-family: 'Lobster', cursive;
+  }
+  .comment {
+    font-size: 18px;
+    font-weight: 600;
+    color: gray;
+  }
+
+  form {
+    @include flexSort(column, null, center);
+    gap: 5px;
+    border-top: $border-gray;
+    padding-top: 30px;
+
+    p {
+      font-size: 13px;
+      color: $color-gray;
+    }
+
+    input {
+      @include widthHeightSort(250px, 33px);
+      @include borderSort($border-gray, $border-radius);
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #fafafa;
+
+      &::placeholder {
+        font-size: 13px;
+      }
+    }
+  }
+
+  button {
+    width: 250px;
+    height: 33px;
+    border-radius: 10px;
+    border: none;
+    background-color: $color-light-blue;
+    color: white;
+  }
+
+  .blocked {
+    background-color: $color-light-blue;
+  }
+
+  .unBlocked {
+    background-color: $color-blue;
+  }
+
+  .login {
+    font-size: 15px;
+  }
+
+  .blue {
+    color: $color-blue;
+  }
+}

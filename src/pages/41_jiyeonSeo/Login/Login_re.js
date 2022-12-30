@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { json, useNavigate } from 'react-router-dom';
 import './Login_re.scss';
 
 function LoginJiyeon() {
@@ -15,10 +15,21 @@ function LoginJiyeon() {
     setPwValue(event.target.value);
   };
 
-  const navigate = useNavigate();
-
+  // const navigate = useNavigate();
   const handleClickEvent = () => {
-    navigate('/main_jiyeonSeo');
+    fetch('http://10.58.52.146:3000/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({ email: idValue, password: pwValue }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.message);
+        localStorage.setItem('mytoken', data.message);
+        console.log(localStorage.getItem('mytoken'));
+      });
+
+    // navigate('/main_jiyeonSeo');
   };
 
   return (
