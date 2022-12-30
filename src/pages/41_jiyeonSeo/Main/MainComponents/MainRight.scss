@@ -1,0 +1,87 @@
+@import '../../styles/common.scss';
+@import '../../styles/variables.scss';
+
+.mainRight {
+  @include flexSort(column, null, null);
+  width: 300px;
+  aspect-ratio: 3 / 8;
+  padding: 20px 10px;
+
+  .profile {
+    @include flexSort(null, null, center);
+    padding-left: 5px;
+
+    & img {
+      @include widthHeightSort(50px, 50px);
+      border-radius: $border-radius-img;
+    }
+
+    & div p {
+      margin: 0 10px;
+    }
+  }
+
+  .stories,
+  .recommend {
+    @include flexSort(column, null, null);
+    @include borderSort($border-gray, $border-radius);
+    height: 200px;
+    padding: 10px;
+    margin-top: 10px;
+
+    .story-top,
+    .recommend-top {
+      @include flexSort(null, space-between, null);
+      margin-bottom: 10px;
+    }
+
+    .active {
+      border: 2px solid #d02f96;
+      padding: 2px;
+    }
+
+    .column {
+      @include flexSort(column, null, null);
+
+      .hidden {
+        @include widthHeightSort(120px, 14px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .row {
+        @include flexSort(null, null, center);
+        position: relative;
+
+        .blue {
+          @include positionSort(null, 10px, null, null);
+          color: $color-blue;
+        }
+      }
+    }
+
+    .marginZero {
+      margin: 0 10px;
+    }
+  }
+
+  .info {
+    &::after {
+      content: '•';
+    }
+
+    &:last-child::after {
+      content: '';
+    }
+  }
+
+  .scroll {
+    margin-top: 10px;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

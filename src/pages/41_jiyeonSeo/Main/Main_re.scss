@@ -1,0 +1,40 @@
+@import '../styles/common.scss';
+@import '../styles/variables.scss';
+
+.wrapMain {
+  @include flexSort(column, center, center);
+  font-size: 15px;
+
+  main {
+    @include flexSort(null, center, null);
+    @include widthHeightSort(100%, 90%);
+  }
+}
+
+.profile-photo {
+  @include widthHeightSort(30px, 30px);
+  border-radius: $border-radius-img;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.space {
+  margin: 0 5px;
+}
+
+.gray {
+  color: $color-gray;
+}
+
+.gap {
+  gap: 13px;
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 815px) {
+  .mainRight {
+    display: none;
+  }
+}

@@ -1,0 +1,126 @@
+@import '../../styles/common.scss';
+@import '../../styles/variables.scss';
+
+.content {
+  @include flexSort(column, null, null);
+  width: 540px;
+
+  .feed {
+    @include borderSort($border-gray, $border-radius);
+    position: relative;
+    width: 95%;
+    margin: 20px 10px;
+    padding: 10px;
+
+    &-top {
+      @include flexSort(null, null, center);
+      position: relative;
+      gap: 10px;
+      width: 98%;
+      font-weight: 600;
+
+      img:last-child {
+        @include positionSort(null, 10px, null, null);
+        @include widthHeightSort(20px, 15px);
+      }
+    }
+
+    &-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    .like-emojis {
+      @include flexSort(null, null, center);
+      position: relative;
+
+      & img:first-child {
+        width: 30px;
+      }
+
+      & img:last-child {
+        @include positionSort(null, 10px, null, null);
+      }
+
+      .small-emojis {
+        width: 25px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .txt-likes {
+    margin: 10px 0;
+
+    .small-image {
+      @include widthHeightSort(15px, 15px);
+      border-radius: $border-radius-img;
+    }
+  }
+
+  .comments {
+    margin: 0 0 50px 5px;
+    div {
+      height: 100px;
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 2px;
+    }
+  }
+
+  #comment {
+    position: relative;
+    bottom: -50px;
+
+    &Input {
+      @include widthHeightSort(100%, 40px);
+      @include positionSort(null, null, 50px, null);
+      @include borderSort($border-input, $border-radius);
+      padding: 10px;
+      outline: none;
+    }
+
+    & button {
+      @include positionSort(null, 5px, 60px, null);
+      border: none;
+      background-color: white;
+    }
+  }
+
+  .comment-lists {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    span {
+      margin-right: 5px;
+    }
+
+    .text {
+      display: inline-block;
+    }
+
+    & li img {
+      @include positionSort(null, 40px, null, null);
+      width: 15px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .delete {
+      @include positionSort(null, 10px, null, null);
+      font-size: 13px;
+      cursor: pointer;
+    }
+  }
+}

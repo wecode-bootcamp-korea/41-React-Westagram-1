@@ -10,7 +10,9 @@ import LoginDagyeong from './pages/41_dagyeong/Login/Login';
 import LoginDahye from './pages/41_dahye/Login/Login';
 import LoginSangheon from './pages/41_sangheon/Login/Login';
 import LoginHwanseong from './pages/41_hwanseong/Login/Login';
-
+import LoginJiyeon from './pages/41_jiyeonSeo/Login/Login_re';
+import MainJiyeon from './pages/41_jiyeonSeo/Main/Main_re';
+import SignUpJiyeon from './pages/41_jiyeonSeo/SignUp/SignUp';
 import Nav from './components/Nav/Nav';
 
 function Router() {
@@ -28,6 +30,9 @@ function Router() {
         <Route path="/login_hwanseong" element={<LoginHwanseong />} />
         <Route path="/login_sangheon" element={<LoginSangheon />} />
         <Route path="/login_jiyeon" element={<Hi />} />
+        <Route path="/login_jiyeonSeo" element={<LoginJiyeon />} />
+        <Route path="/main_jiyeonSeo" element={<MainJiyeon />} />
+        <Route path="/signup_jiyeonSeo" element={<SignUpJiyeon />} />
       </Routes>
     </BrowserRouter>
   );
