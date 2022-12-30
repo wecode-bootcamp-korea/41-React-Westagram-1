@@ -11,7 +11,12 @@ function Article() {
 
   useEffect(() => {
     // data fetching side effect
-    fetch('/public/data/MockData.json')
+    fetch('/data/MockData.json', {
+      headers: {
+        Accept: 'application / json',
+      },
+      method: 'GET',
+    })
       .then(response => response.json())
       .then(result => {
         console.log('hi');
@@ -49,6 +54,18 @@ function Article() {
 
   return (
     <article>
+      {/* {articles.map(
+        (
+          article_number,
+          my_profile,
+          posting,
+          like,
+          comment_nickname,
+          comment,
+          time
+        ) => {}
+      )} */}
+
       <div className="feedTop">
         <img
           src="./images/41_dagyeong/myProfile.jpeg"

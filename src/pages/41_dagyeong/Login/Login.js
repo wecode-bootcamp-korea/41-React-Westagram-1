@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function LoginDagyeong() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [idValue, setId] = useState('');
   const [pwValue, setPw] = useState('');
