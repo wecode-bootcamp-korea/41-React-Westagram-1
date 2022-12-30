@@ -3,6 +3,11 @@
 .Main {
   @include flex-column(column);
 
+  .feeds {
+    display: flex;
+    flex-direction: column;
+  }
+
   /* =========== header 부분 ============ */
 
   .header {
@@ -74,7 +79,7 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgba(128, 128, 128, 0.087);
 
     .feeds {

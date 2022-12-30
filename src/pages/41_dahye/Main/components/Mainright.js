@@ -1,6 +1,5 @@
 import React from 'react';
 import Aside from './Aside';
-// import Comment from '../components/Comment.js';
 import '../Main.scss';
 
 const Mainright = () => {
@@ -13,10 +12,11 @@ const Mainright = () => {
           src="./images/41_dahye/wecode_logo.png"
         />
         <div className="account-text">
-          <p className="account-text-1">wecode_bootcamp</p>
-          <p className="account-text-2">WeCode|위코드</p>
+          <p className="account-text-1">"wecode_bootcamp"</p>
+          <p className="account-text-2">"WeCode|위코드"</p>
         </div>
       </div>
+
       <div className="story-box">
         <div className="story-title">
           <p>스토리</p>

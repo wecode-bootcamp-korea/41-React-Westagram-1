@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Comment from '../components/Comment.js';
 import '../Main.scss';
 
-const Feed = () => {
+const Feed = ({ userinfo }) => {
   const [comment, setComment] = useState('');
   const [commentLi, setCommentLi] = useState([]);
   const onChange = e => {
@@ -23,11 +23,11 @@ const Feed = () => {
           <img
             className="article-account-img"
             alt="profile-img"
-            src="./images/41_dahye/wecode_logo.png"
+            src={userinfo.src}
           />
           <div className="article-account-text">
-            <p className="article-account-text-1">wecode_bootcamp</p>
-            <p className="article-account-text-2">WeCode|위코드</p>
+            <p className="article-account-text-1">{userinfo.username}</p>
+            <p className="article-account-text-2">{userinfo.userdetail}</p>
           </div>
         </div>
         <div className="article-img">
