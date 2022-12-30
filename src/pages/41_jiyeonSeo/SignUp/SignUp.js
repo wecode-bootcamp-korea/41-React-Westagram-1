@@ -30,7 +30,11 @@ function SignUpJiyeon() {
       }),
     })
       .then(res => res.json())
-      .then(data => console.log(data));
+      .then(data => {
+        console.log(data);
+        alert('회원가입 성공! 로그인하세요!');
+        navigate('/login_jiyeonSeo');
+      });
   };
 
   const navigate = useNavigate();
