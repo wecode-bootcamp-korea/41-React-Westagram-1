@@ -1,4 +1,20 @@
-@mixin widthHeightSort($width, $height) {
-  width: $width;
-  height: $height;
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
 }
+
+@mixin flex-column($column) {
+  display: flex;
+  flex-direction: $column;
+}
+
+// @mixin flex($center) {
+//   display: flex;
+//   justify-content: $center;
+// }
+
+$backColor: rgba(240, 240, 240, 0.261);
+$borderLine: rgb(224, 224, 224);
+
+// $borderLineDark: rgba(128, 128, 128, 0.365);

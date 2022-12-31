@@ -10,13 +10,12 @@ import LoginDagyeong from './pages/41_dagyeong/Login/Login';
 import LoginDahye from './pages/41_dahye/Login/Login';
 import LoginSangheon from './pages/41_sangheon/Login/Login';
 import LoginHwanseong from './pages/41_hwanseong/Login/Login';
-
-import Nav from './components/Nav/Nav';
+// import Nav from './components/Nav/Nav';
 
 function Router() {
   return (
     <BrowserRouter>
-      <Nav />
+      {/* <Nav /> */}
       <Routes>
         <Route path="/main_dagyeong" element={<MainDagyeong />} />
         <Route path="/main_dahye" element={<MainDahye />} />

@@ -1,3 +1,71 @@
-h1 {
-  background-color: powderblue;
+@import '../../../styles/variable.scss';
+
+.Login {
+  @include flex(center, center);
+  align-items: center;
+  height: 100vh;
+  background-color: $backColor;
+
+  .login-box {
+    border: 1px solid $borderLine;
+    background-color: white;
+    color: rgb(57, 57, 57);
+    width: 380px;
+    height: 410px;
+    padding: 20px;
+    text-align: center;
+
+    .logo {
+      font-family: 'Lobster';
+      font-size: 50px;
+      margin: 10px 0px 40px 0px;
+      padding-bottom: 8px;
+
+      a:link {
+        color: rgb(57, 57, 57);
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: rgb(57, 57, 57);
+      }
+    }
+
+    .input-box {
+      border: 1px solid $borderLine;
+      background-color: $backColor;
+      color: rgb(57, 57, 57);
+      height: 33px;
+      width: 300px;
+      font-size: 13px;
+      padding: 4px;
+      padding-left: 8px;
+      margin-bottom: 5px;
+      border-radius: 3px;
+    }
+
+    .login-btn {
+      border: none;
+      background-color: rgb(146, 205, 254);
+      color: white;
+      width: 310px;
+      height: 33px;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 4px;
+      margin-top: 7px;
+      border-radius: 3px;
+    }
+
+    // .login-btn:disabled {
+    //   opacity: 0.5;
+    // }
+
+    .forgot-pw {
+      color: rgb(50, 83, 123);
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 130px;
+    }
+  }
 }

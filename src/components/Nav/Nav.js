@@ -1,8 +1,8 @@
-import React from 'react';
-import './Nav.scss';
+// import React from 'react';
+// import './Nav.scss';
 
-function Nav() {
-  return <h1>hello</h1>;
-}
+// function Nav() {
+//   return <p>..</p>;
+// }
 
-export default Nav;
+// export default Nav;
