@@ -1,0 +1,29 @@
+[
+  {
+    "article_number": 1,
+    "my_profile": "/public/images/41_dagyeong/myProfile.jpeg",
+    "posting": "/public/images/41_dagyeong/pic2.jpeg",
+    "like": "좋아요 3270개",
+    "comment_nickname": "nana123",
+    "comment": "위워크에서 진행한 필름카메라 클래스...",
+    "time": "35분전"
+  },
+  {
+    "article_number": 2,
+    "myp_rofile": "/public/images/41_dagyeong/myProfile.jpeg",
+    "posting": "/public/images/41_dagyeong/pic3.jpeg",
+    "like": "좋아요 45개",
+    "comment_nickname": "squre365",
+    "comment": "오늘 저녁은 뭐 먹지?",
+    "time": "16분전"
+  },
+  {
+    "article_number": 3,
+    "myp_rofile": "/public/images/41_dagyeong/myProfile.jpeg",
+    "posting": "/public/images/41_dagyeong/pic3.jpeg",
+    "like": "좋아요 10개",
+    "comment_nickname": "circle360",
+    "comment": "나는 동그라미야",
+    "time": "1분전"
+  }
+]

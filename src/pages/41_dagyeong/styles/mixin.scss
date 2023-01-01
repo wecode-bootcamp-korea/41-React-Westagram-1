@@ -1,0 +1,15 @@
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin stream_flex($display, $align) {
+  display: $display;
+  align-items: $align;
+}
+
+@mixin na {
+  border: $border;
+  border-radius: $radius;
+}
